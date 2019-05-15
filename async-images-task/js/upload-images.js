@@ -41,8 +41,6 @@ const fetchImagesAsync = imagesList => {
       counter++;
       if (imagesList.length > counter) {
         renderImage(imagesList[counter]);
-      } else {
-        clearInterval(timerId);
       }
     }
   }, PAUSE);
