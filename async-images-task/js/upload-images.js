@@ -36,11 +36,14 @@ const renderImage = src => {
 
 const fetchImagesAsync = imagesList => {
   let counter = -1;
-  setInterval(function() {
+  let timerId = setInterval(function() {
     for (let i = 0; i < 3; i++) {
       counter++;
+      console.log(counter);
       if (imagesList.length > counter) {
         renderImage(imagesList[counter]);
+      } else {
+        clearInterval(timerId);
       }
     }
   }, PAUSE);
